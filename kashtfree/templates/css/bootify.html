@@ -1,0 +1,158 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wow</title>
+    <style>
+
+        *{
+            padding: 0;margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box_container f-lch h-100vh w-fit-content bc-gray" abhay="adga">
+      
+        <div class="box c-blue ">box</div>
+        <div class="box btn-hrl bc-blue">box</div>
+        <div class="box btn-hrm bc-blue">box</div>
+        <div class="box btn-hrs bc-blue">box</div>
+        <div class="box btn-frs bc-blue">box</div>
+        <div class="box btn-frm bc-blue">box</div>
+        <div class="box btn-frl bc-blue">box</div>
+        <div class="box btn-nrl bc-blue">box</div>
+        <div class="box btn-nrm bc-blue">box</div>
+        <div class="box btn-nrs bc-blue w-20%">box</div>
+        
+    </div>
+</body> {% endcomment %}
+
+
+<script >
+
+    flexbox={
+
+        "b":"space-between",
+        "a":"space-around",
+        "l":"space-evenly",
+        "s":"flex-start",
+        "e":"flex-end",
+        "c":"center",
+        "h":"row",
+        "v":"column",
+    }
+    
+    window.addEventListener("load",(e) => {
+    
+        a=Array.from(document.querySelectorAll("*"))
+        a.forEach(element => {
+            
+            ec=element.classList
+            for (let i = 0; i < ec.length; i++) {
+    
+                // these set of line work for set the color of give class c-colorname 
+                (ec[i].startsWith("c-")==true) && (element.style.color=ec[i].split("c-")[1]);
+                
+                // these set of line work for set the background color of give class bc-colorname 
+                (ec[i].startsWith("bc-")==true) &&( element.style.backgroundColor=ec[i].split("bc-")[1])
+                
+                // these set of line work for set the width
+                if(ec[i].startsWith("w-")==true) 
+                element.style.width=ec[i].split("w-")[1]
+                
+                
+                // these set of line work for set the height
+                if(ec[i].startsWith("h-")==true)
+                    console.log("inside")
+                     element.style.height=ec[i].split("h-")[1]
+    
+                
+                // these set of code for form the button  
+                if ( ec[i].startsWith("btn-")==true) {
+                    element.style.width="fit-content"
+                    element.style.cursor=" pointer"
+                    element.style.boxShadow=" 2px 2px 4px gray"
+                    element.style.fontWeight="700"
+                    element.style.fontSize="19px"
+                    element.style.border="none"
+                    element.style.margin="3px"
+                    
+                    
+                    
+                    props=ec[i].split("btn-")[1]
+                    if(props[2]=="l"){
+                        element.style.padding=" 10px 70px"
+                    }
+                    else if(props[2]=="s"){
+                        element.style.padding=" 5px 15px"
+                    }
+                    else if(props[2]=="m"){
+                        element.style.padding=" 10px 35px"
+                    }
+                    if(props.slice(0,2)=="hr"){
+                        element.style.borderRadius=" 0px 17px 0px 17px"
+                        element.style.width="fit-content"
+                        
+                        
+                    }
+                    if(props.slice(0,2)=="fr"){
+                        element.style.borderRadius=" 8px"
+                        
+                        
+                    }
+                    if(props.slice(0,2)=="nr"){
+                        element.style.borderRadius=" 3px"
+                        
+                        
+                    }
+                    
+                    element.addEventListener("mouseenter",(e)=>{
+                        
+                        element.style.transform="scale(0.98)"
+                        element.style.transition="0.3s"
+                        
+                    })
+                    element.addEventListener("mouseleave",(e)=>{
+                        
+                        element.style.transform="scale(1)"
+                        
+                    })
+                    
+                }
+                // these set of code for manage display flex   
+                
+                if(ec[i].startsWith("f-")==true){
+                    
+                    props=ec[i].split("f-")[1]
+                    element.style.display="flex"
+                    element.style.justifyContent=flexbox[props[0]]
+                    element.style.alignItems=flexbox[props[1]]
+                    element.style.flexDirection=flexbox[props[2]]
+    
+                 }
+                
+                if(ec[i].startsWith("ip-")==true){
+                    
+                    props=ec[i].split("f-")[1]
+                    element.style.display="flex"
+                    element.style.justifyContent=flexbox[props[0]]
+                    element.style.alignItems=flexbox[props[1]]
+                    element.style.flexDirection=flexbox[props[2]]
+    
+                 }
+    
+                
+                
+                 
+                
+            } 
+            
+        });
+    
+    })
+ 
+   
+</script>
+</html>
