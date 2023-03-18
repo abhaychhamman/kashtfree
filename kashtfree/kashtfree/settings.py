@@ -25,9 +25,10 @@ SECRET_KEY = 'django-insecure-^f#fai5)s=l7-!6!5+b4=)9ekg8+i16e%41=e_2e1n)20g)d%h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["www.kashtfree.in","kashtfree.in",'127.0.0.1']
 
 
+SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,7 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Authentication'
+    'Authentication',
+    'Home',
+    'GenerateLink',
+    'dashboard',
+    'Developer',
+    'contactus',
+    'aboutus',
+    'feedback',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [
@@ -63,7 +73,12 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
             ],
+            'libraries':{
+            'action_tg': 'Authentication.mytemplatetags.action_tg',
+            
+            }
         },
     },
 ]
@@ -77,7 +92,7 @@ WSGI_APPLICATION = 'kashtfree.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'mndb/db.sqlite3',
     }
 }
 
@@ -106,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -117,6 +132,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS=[
+    BASE_DIR/'static'
+]
+
+# STATIC_ROOT=BASE_DIR /'static'
+MEDIA_URL ='/media/'
+MEDIA_ROOT=BASE_DIR/'media'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

@@ -1,0 +1,78 @@
+<nav class="f-ach h-50px" style="background:var(--bgcolor);">
+
+    <div class="leftNav ">
+        <div class="logo"><a href="/">kashtfree</a></div>
+        <div class="togglebtn cancel ">MENU</div>
+
+    </div>
+    <div class="rightNav  w-70%">
+
+        <li><a href="/">Home</a></li>
+        <li><a href="/developer">Developer</a></li>
+        <li><a href="/aboutus">About us</a></li>
+        <li><a href="/contactus">Contact us</a></li>
+        <li><a href="/feedback">Feedback</a></li>
+        {% if request.user.is_authenticated %}
+        <li> <a href="/dashboard" class="">Dashboard </a> </li>
+        {% else %}
+        <li><a href="/login">Login</a></li>
+        {% endif %}
+        <li class="GenerateBtn"> <a href="/generateLink" class="btn-nrs c-var(--f2color)  form_btn "
+                style="background: var(--bgcolor);">Generate link</a></li>
+
+
+    </div>
+
+
+
+</nav>
+
+<script>
+
+
+    window.addEventListener("resize", (e) => {
+ 
+        if (window.innerWidth > 570) {
+
+            document.getElementsByClassName('rightNav')[0].style.display = "flex"
+            if (document.getElementsByClassName("togglebtn")[0].innerHTML == "X") {
+
+
+                document.getElementsByClassName("togglebtn")[0].innerHTML = "MENU"
+            }
+
+        }
+        else {
+            if (document.getElementsByClassName("togglebtn")[0].innerHTML == "MENU" && document.getElementsByClassName('rightNav')[0].style.display == "flex") {
+                document.getElementsByClassName('rightNav')[0].style.display = "none"
+ 
+            }
+        }
+ 
+
+    })
+
+    // document.addEventListener()
+
+    $('.togglebtn').click((e) => {
+
+        if (e.target.innerHTML == "X") {
+
+ 
+
+            document.getElementsByClassName('rightNav')[0].style.display = "none"
+            document.getElementsByTagName('nav')[0].style.padding = "2px 20px"
+            e.target.innerHTML = "MENU"
+        }
+        else if (e.target.innerHTML == "MENU") {
+
+
+            console.log("ww")
+
+            document.getElementsByClassName('rightNav')[0].style.display = "flex"
+            document.getElementsByTagName('nav')[0].style.padding = "15px"
+            e.target.innerHTML = "X"
+        }
+    })
+
+</script>

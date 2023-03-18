@@ -17,7 +17,7 @@ def signup(request):
 
     if(request.method=="POST"):
         vf=Verification.objects.get(email=request.POST['user_email'])   # get the verification code by the user email
-        if(str(vf.code)==request.POST['code']):
+        if(str(vf.code)==request.POST['code']):  #check verification code of email and user given code is equal or not if it is true then create user otherwise 
             user=User.objects.create_user(username=request.POST['user_email'],password=request.POST['user_password'],email=request.POST['user_email'])
             user.first_name=request.POST['user_fname']
             user.last_name=request.POST['user_lname']
@@ -39,14 +39,16 @@ def signup(request):
 @csrf_exempt
 def verification(request):
   
+    print(request.POST)
     if(len(User.objects.filter(username=request.POST['email']))>0):
            return JsonResponse({"data":"userExists"})
        
     else:
-
+        # www.abhaysingh722@gmail.com app password unmxddbfahesfhql
         verification_code=random.randint(1000,2000)
-        semail="www.abhaysingh722@gmail.com"
-        psd="unmxddbfahesfhql"
+        semail="kashtfree@gmail.com"
+        psd="sijgobylfhslrduu"
+        
         remail=request.POST['email']
         subject="verification on Kashtfree Website"
         try:
@@ -90,8 +92,10 @@ def verification(request):
 
 
 
-
-
+def lgout(request):
+    messages.success(request,request.user.first_name+" Logout SuccessFully!")
+    logout(request)
+    return HttpResponseRedirect('/login')
 
 
 
@@ -100,17 +104,17 @@ def Login(request):
   
   
     if request.method == 'POST' and request.POST['submit']=="Log in":  
-            print(request.POST)
+          
             user=authenticate(username=request.POST['user_email'],password=request.POST['user_password']) 
             # print(user,request.POST['email'],request.POST['password'])
             if user is not None:
                 login(request,user)
-                print(request.user.is_authenticated)
-               
+                 
+                messages.success(request, "You have been login successfully...")
                 return HttpResponseRedirect('/')
             else:
              
-                messages.success(request, "Your password or username Wrong... !!...!")
+                messages.error(request, "Your password or username Wrong... ")
                 return HttpResponseRedirect('/login/')
 
     return render(request,"login.html")

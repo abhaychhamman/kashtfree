@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+
+
+<form action="" method="post" class="w-500px">
+
+    {% csrf_token %}
+
+    <h3 class="heading">Field Name</h3>
+    {% for i in nfields %}
+    <div class="ip">
+        <label for="Column{{i}}" class="chh_label">Enter Column{{i}} Name*</label>
+        <input type="text" class="chh_iptext" id="Column{{i}}" name="Column{{i}}" required>
+    </div>
+
+    {% endfor %}
+
+    <div class="f-ach w-100%" style="margin:10px 0px;">
+
+
+
+        <button type="submit" name="submit" class="btn-hrl c-var(--f2color) form_btn" value="signup">submit
+
+            &#8594;</button>
+
+    </div>
+
+</form>
+
+
+
+{% endblock content %}

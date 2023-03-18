@@ -1,0 +1,96 @@
+
+<style>
+
+    .home_section{
+    
+        margin: 80px 10px;
+        width: 86%;
+        margin: auto;
+    }
+     
+    .leftHome .quotes{
+        
+        font-size: 1.55rem;
+        border-left: 4px solid rgb(120, 17, 17);
+        text-indent: pa;
+        padding: 0px 10px;
+        text-transform: capitalize;
+        margin-top: 63px;
+ 
+    }
+    
+    .home_section .rightHome{
+             
+                transition: 5s;
+
+        }
+    .home_section .rightHome:hover{
+                transform: rotate(720deg);
+                transition: 7s;
+                cursor: pointer;
+
+        }
+    .home_section .rightHome:active{
+                transform: scale(0.01);
+                transition: 0.4s;
+
+        }
+    
+    @media (max-width:860px){
+    
+        .home_section{
+            font-size: 16px;
+            justify-content: space-between !important;
+            width: 90%;
+        }
+        .home_section .leftHome{
+            width: 60% !important;
+        }
+
+        .leftHome .quotes{
+        
+        font-size: 1.15rem;
+         
+    }
+       .smfont{
+         font-size: 12px;
+       }
+    
+    }
+    @media (max-width:570px){
+    
+        
+        .home_section{
+            font-size: 16px;
+            justify-content: space-between !important;
+            flex-direction: column-reverse !important;
+            width: 90%;
+            height: fit-content !important;
+            margin-top: 20px;
+        }
+        .home_section .leftHome,.home_section .rightHome{
+            width: 90% !important;
+            margin-bottom: 26px !important;
+
+        }
+        .usernameHome h4{
+           
+            width: 100%;
+        }
+     
+        .usernameHome {
+            margin-top: 20px !important;
+            width: 100% !important;
+            text-align: center !important;
+     
+        }
+     
+        .rightHome img{
+
+            height: 210px;
+
+        }
+    }
+    
+    
+    </style>
