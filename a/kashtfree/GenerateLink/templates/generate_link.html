@@ -1,0 +1,64 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+{%include 'css/authentication style.html' %}
+
+
+<div class="instruct">
+
+    You have  active {{userAlllinks|length}} links right now , these are 
+    {% for i in userAlllinks %}
+    
+    <span class="c-dodgerblue">{{i}}</span>,
+    
+    {% endfor %}
+
+    if you want to see the data of your links , so go on your dashboard section..
+ 
+</div>
+
+<form action="" method="post" class="w-500px">
+
+    {% csrf_token %}
+
+    <h3 class="heading">Generate Link</h3>
+    <div class="ip ">
+        <label for="form_title" class="chh_label">Form Title*</label>
+        <input type="text" class="chh_iptext" id="form_title" name="form_title" required>
+    </div>
+    <div class="ip ">
+        <label for="form_desc" class="chh_label">Form Description*</label>
+        <input type="text" class="chh_iptext" id="form_desc" name="form_desc" required>
+    </div>
+  
+    <div class="ip ">
+        <label for="link_name" class="chh_label"> Link Name*</label>
+        <input type="text" class="chh_iptext" id="link_name" name="link_name" required>
+    </div>
+    <div class="ip ">
+        <label for="time_active_link" class="chh_label">How many days you want to activate this link*</label>
+        <input type="text" class="chh_iptext" id="time_active_link" name="time_active_link" placeholder="only between 1-15" required>
+    </div>
+    <div class="ip  ">
+        <label for="nfields" class="chh_label">Number of Fields in your Form*</label>
+        <input type="text" class="chh_iptext" id="nfields" name="nfields" placeholder="only between 1-11" required>
+    </div>
+ 
+ <style>
+
+
+ </style>
+ <div class="f-sch w-100%" style="margin:10px 0px;">
+
+    <button type="submit" name="submit" class="btn-hrl c-var(--f2color)  form_btn" value="signup">Next
+        &#8594;</button>
+    </div>
+
+</form>
+
+
+ 
+
+
+{% endblock content %}

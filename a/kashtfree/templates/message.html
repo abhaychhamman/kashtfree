@@ -1,0 +1,71 @@
+{% if messages %}
+
+
+<div class="message_container " >
+    
+    
+    
+    
+    
+    <div class="messagebody">
+        <ul class="messages">
+            {% for message in messages %}
+            {% if "error" in message.tags %}
+            <li class="{{ message.tags }} c-crimson">
+                {% if 'safe' in message.tags %}{{ message|safe }}{% else %}{{ message }}{% endif %}
+            </li>
+            
+            {% else %}
+            <li class="{{ message.tags }} c-green">
+                {% if 'safe' in message.tags %}{{ message|safe }}{% else %}{{ message }}{% endif %}
+            </li>
+            
+            {% endif %}
+           
+            {% endfor %}
+        </ul>
+
+ 
+    </div>
+    <div id="cancelMessageContainer">
+        <i class="fa fa-close" aria-hidden="true"></i>
+    </div>
+
+
+</div>
+
+<script>
+
+  
+    document.getElementById("cancelMessageContainer").addEventListener("click",(e)=>{
+        console.log("wowo")
+        document.getElementsByClassName("message_container")[0].style.display="none"
+    })
+
+</script>
+
+{% endif %}
+<style>
+    .message_container {
+
+        width: 100%;
+        height: fit-content;
+        font-size: 13px;
+
+        display: flex;
+        background-color: rgb(157, 205, 244);
+        color: black;
+        font-weight: 600;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 20px;
+    }
+
+    #cancelMessageContainer:hover{
+        color: red;
+        cursor: pointer;
+
+    }
+
+
+</style>

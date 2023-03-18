@@ -1,0 +1,167 @@
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Quantico', sans-serif;
+
+    }
+
+:root{
+    --bgcolor:linear-gradient( 45deg,#3860A6 ,#38B7C6);
+    --bodycolor:rgb(237, 237, 237);
+    --f1color:black;
+    --f2color:white;
+    --boxshadow:1px 1px 4px gray;
+    --boxshadowhigh:2px 2px 6px white;
+    --insetboxshadow:inset 1px 1px 3px gray,1px 1px 4px gray;
+    --bradius:8px;
+}
+
+body{
+
+    background-color: var(--bodycolor);
+}
+
+li{
+    list-style: none;
+}
+
+a{
+
+    color: blue;
+    text-decoration: none;
+}
+ 
+ 
+a:hover{
+
+    color: rgb(77, 77, 77);
+    text-decoration: underline;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.ip{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.chh_iptext{
+
+    width: clamp(240px,90%,410px);
+    padding: 6px;
+    background: white;
+    border-radius: var(--bradius);
+    outline: none;
+    box-shadow: var(--insetboxshadow);
+    border: 2px solid var(--bgcolor);
+    text-indent: 5px;
+    margin: 2px;
+}
+
+.chh_iptext:focus{
+
+    box-shadow: inset 2px 2px 13px black;
+    border: 2px solid deepskyblue;
+    color:blue;
+}
+
+.chh_label{
+
+    margin: 2px;
+}
+ 
+.form_btn{
+  
+    
+    background: linear-gradient(to left, #316ebc 0%, #88a1b5 100%);
+}
+.form_btn:hover{
+    transition: 1s !important;
+      
+       background: linear-gradient(to left, #4e7ca0 0%, #446794 100%);
+   
+   }
+
+
+   form{
+    margin: 20px auto;
+    background-image: var(--bgcolor);
+    padding: 17px;
+    border-radius: 12px;
+    box-shadow: #4f4f4f 7px 6px 13px;
+   
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+   }
+
+   .cancel{
+
+    /* background-color: var(--f2color); */
+    color: var(--f2color);
+    width: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    font-weight: bolder;
+   }
+   .cancel:hover{
+
+    transform: scale(0.9);
+    color: rgb(190, 190, 190);
+   }
+
+   textarea{
+        resize: none;
+   }
+
+
+   .instruct{
+
+        animation: animateInstruct 25s infinite linear;
+        height: 30px;
+        overflow: hidden;
+       }
+
+
+   @keyframes animateInstruct {
+     
+        0%{
+
+            margin-left: 1600px;
+        }
+        100%{
+            margin-left: -600px;
+
+        }
+    
+   }
+
+@media (max-width:520px){
+    form{
+        width: 96% !important;
+        margin: auto;
+    }
+
+    .form_btn,.btn-nrm{
+        font-size: 13px !important;
+
+    }
+}
+
+@media (max-width:520px){
+ 
+    .form_btn,.btn-nrm{
+        font-size: 11px !important;
+
+    }
+}
+
+</style>

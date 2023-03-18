@@ -1,0 +1,163 @@
+<style>
+
+    nav li a{
+
+        color: white;
+        font-weight: 500;
+        
+    }
+    .rightNav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .leftNav{
+
+        margin: 0px 20px ;
+    }
+  
+    nav .logo{
+
+        text-align: center;
+    font-weight: 700;
+    color: white;
+    height: 100%;
+    font-size: 23px;
+    box-shadow: inset 3px 2px 14px #3f3f3f;
+    padding: 5px 20px;
+    }
+    nav .logo a{
+  
+    color: white;
+    text-decoration: none;
+    font-family: 'Cormorant Infant', serif;
+ 
+    }
+    nav .logo:hover{
+
+        cursor: pointer;
+        transform: scale(0.98);
+        transition: 0.5s;
+    }
+    .togglebtn{
+    display: none !important;
+}
+
+@media (max-width:890px){
+
+
+    nav li a{
+
+color: var(--f2color);
+font-weight: 500;
+font-size: 13px;
+
+}
+
+.GenerateBtn a{
+
+    font-size: 13px !important ;
+}
+
+.rightNav{
+
+    width: 80% !important;
+}
+
+
+nav .logo{
+
+text-align: center;
+font-weight: 500;
+color: white;
+height: 100%;
+font-size: 20px;
+box-shadow: inset 3px 2px 14px #3f3f3f;
+padding: 5px 10px;
+}
+
+}
+
+@media (max-width:670px){
+
+
+    nav li a{
+
+color: var(--f2color);
+font-weight: 500;
+font-size: 11px;
+
+}
+
+.GenerateBtn a{
+
+    font-size: 12px !important ;
+}
+
+.rightNav{
+
+    width: 90% !important;
+}
+nav .logo{
+    text-align: start;
+    font-size: 16px !important;
+}
+
+}
+@media (max-width:570px){
+
+.togglebtn{
+    display: flex !important;
+    margin: auto 0px ;
+    cursor: pointer;
+}
+ nav{
+    flex-direction: column !important;
+    height: fit-content !important;
+    padding: 5px 20px ;
+    align-items: flex-start !important;
+
+ }
+ .rightNav li{
+    width: 40%;
+    text-align: center;
+ }
+ .rightNav {
+    flex-wrap: wrap;
+    align-items: center !important;
+    margin: 10px 0px ;
+    display: none; 
+ }
+
+ .GenerateBtn{
+ 
+width: fit-content !important;
+margin: 20px 0px !important;
+
+
+}
+ .GenerateBtn a{
+ 
+        padding: 5px 30px !important;
+
+}
+
+.leftNav {
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0px !important;
+}
+nav{
+  
+  padding: 5px 35px !important;
+ 
+
+}
+
+
+}
+ 
+
+</style>

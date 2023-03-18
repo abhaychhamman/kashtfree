@@ -1,0 +1,114 @@
+{% extends 'index.html' %}
+
+{% load static %}
+{% block content %}
+
+<div class="aboutuspage" style="width: 80%; margin: 30px auto;">
+    <h1>
+                
+        Thank You For Visiting On KastFree……
+    </h1>
+    
+    <div class="topabout ">
+
+
+        <div class="content" style="margin-top: 50px; width: 80%; margin-right: 30px;">
+
+            
+            <div >
+
+                <p>
+                    We are here to solve a huge problem of data entry which saves a lots of time and energy of the person. 
+                </p>
+                <p>
+                    
+                    Although there are many methods of data entry but our way is unique and more convenient. User will get a new experience 
+                    
+                    
+                </p>
+                
+                <p>
+                    And, will start loving this method that's our promise.....
+                </p>
+            </div>
+            </div>
+            <div class="rightHome w-clamp(200px,40%,500px)">
+                
+            <img src="{% static 'img/logo kfree.svg' %}" class="h-300px w-clamp(200px,100%,400px)" style="  object-fit: contain;" alt="">
+
+    </div>
+
+
+    </div>
+  
+
+    <h3  style="margin-top: 50px;">
+        How it's Work ?
+    </h3>
+
+    <ul >
+        <li>First of all you have to sign up through your email id. After signing up you will have to login.</li>    
+        <li> Then you will see your dashboard homepage. Here you will have click on magical GENERATE LINK button.</li>    
+        <li> Then you will have to enter the number of columns you want. You can have maximum 11 columns.</li>    
+        <li>.Then you have to enter the names of particular columns. After that all you need is one click on magical GENERATE LINK button. your link will be generated and now you can share this link to the individuals for data entry.       </li>
+        <li>All the data entered by the individuals will be stored automatically in alphabetically sorted order in your table. You can monitor this through your dashboard.        </li>
+        <li> You can also download your data in different format.</li>
+         <ol type="circle">
+                <li>PDF FORMAT</li>
+                <li>CSV FORMAT</li>
+                <li>EXCEL FORMAT</li>
+                <li>COPY DATA FORMAT</li>
+         </ol>
+   
+   
+    </ul>
+    <h3>
+        How to generate link for share ?
+    </h3>
+
+    <center>
+
+        <video    autoplay muted loop>
+            <source src="{% static 'video/genLink.mp4' %}" type="video/mp4">
+            
+            
+        </video>
+    </center>
+    
+
+
+
+</div>
+
+<style>
+.aboutuspage li{
+
+    list-style: square !important;
+}
+
+video{
+    width: clamp(240px,95%,700px);
+    object-fit: cover;
+    margin-top: 30px;
+}
+
+.topabout{
+
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+@media (max-width:800px){
+    .topabout{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .topabout .content{
+       width: 100% !important; 
+    }
+}
+
+</style>
+
+{% endblock content %}
